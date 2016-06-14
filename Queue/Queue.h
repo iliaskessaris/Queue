@@ -17,7 +17,7 @@ public:
 	void Back();
 	bool Emty();
 	int Size();
-	void Push();
-	void Pop();
+	void Enqueue(int data);
+	void Dequeue();
 	void PrintQueue();
 };
