@@ -20,30 +20,27 @@ Queue::~Queue() {
 //Displays the first element of the queue.
 void Queue::Front() {
 	if (Head != NULL) {
-		cout << "\nThe first element in the queue is: " << Head->data << endl;
+		cout << "\nThe first number in the queue is: " << Head->data << endl;
 	}
 	else {
-		cout << "The list is empty.\n";
+		cout << "\nThe queue is empty.\n";
 	}
 }
 
 //Displays the last element of the queue.
 void Queue::Back() {
 	if (Tail != NULL) {
-		cout << "\nThe last element in the queue is: " << Tail->data << endl;
+		cout << "\nThe last number in the queue is: " << Tail->data << endl;
 	}
 	else {
-		cout << "The list is empty.\n";
+		cout << "\nThe queue is empty.\n";
 	}
 }
 
 //Checks whether or not the queue is empty and returns true or false respectively.
-bool Queue::Emty() {
+void Queue::Empty() {
 	if (Head == NULL) {
-		return true;
-	}
-	else {
-		return false;
+		cout << "\nThe queue is empty\n";
 	}
 }
 
@@ -71,14 +68,14 @@ void Queue::Enqueue(int data) {
 		Tail->next = newdata;
 		Tail = newdata;
 	}
-	cout << "The number added successfully.\n";
+	cout << "\nThe number added successfully.\n";
 }
 
 //Removes the fist item from the queue.
 void Queue::Dequeue() {
 	node* Temp;
 	if (Head == NULL) {
-		cout << "The list is empty.\n";
+		cout << "The queue is empty.\n";
 	} else {
 		Temp = Head;
 		Head = Head->next;
@@ -86,7 +83,7 @@ void Queue::Dequeue() {
 		if (Head == NULL) {
 			Tail = NULL;
 		}
-		cout << "The item successfully removed from the queue.\n";
+		cout << "The number successfully removed from the queue.\n";
 	}
 }
 
@@ -100,6 +97,33 @@ void Queue::PrintQueue() {
 		}
 	}
 	else {
-		cout << "The list is empty.\n";
+		cout << "The queue is empty.\n";
+	}
+}
+
+//Store queue to file Queue.txt.
+void Queue::StoreToFile() {
+	ofstream newfile("Queue.txt");
+	node* Temp = Head;
+	
+	while(Temp != NULL) {
+		if (Temp != Tail) {
+			newfile << Temp->data << endl;
+		}
+		else {
+			newfile << Temp->data;		}		Temp= Temp->next;
+	}
+}
+
+//Build queue from file Queue.txt.
+void Queue::ReadFromFile() {
+	ifstream newfile("Queue.txt");
+	int data;
+
+	if (newfile.is_open()) {
+		while (!newfile.eof()) {
+			newfile >> data;
+			Enqueue(data);
+		}
 	}
 }

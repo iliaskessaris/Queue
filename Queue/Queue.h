@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 class Queue {
@@ -15,9 +16,11 @@ public:
 	~Queue();
 	void Front();
 	void Back();
-	bool Emty();
+	void Empty();
 	int Size();
 	void Enqueue(int data);
 	void Dequeue();
 	void PrintQueue();
+	void StoreToFile();
+	void ReadFromFile();
 };

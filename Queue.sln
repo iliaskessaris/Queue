@@ -7,6 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Queue", "Queue\Queue.vcxpro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBB0CE49-F988-4C46-8908-97800CB17244}"
 	ProjectSection(SolutionItems) = preProject
+		Queue\Queue.txt = Queue\Queue.txt
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
