@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "Queue.h"
-
+using namespace std;
 void menu() {
 	cout << "\nTo check if the queue is empty press 1.\n";
 	cout << "To check the size of the queue press 2.\n";
@@ -12,7 +12,7 @@ void menu() {
 	cout << "To remove the first number from the queue press 7.\n";
 	cout << "To exit any other charachter\n";
 }
-using namespace std;
+
 void main() {
 	Queue* newqueue = new Queue();
 	char choice;
